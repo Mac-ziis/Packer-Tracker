@@ -75,6 +75,20 @@ namespace PackerTracker.Tests
       // Assert
       CollectionAssert.AreEqual(newList, result);
     }
-    
+
+    [TestMethod]
+    public void GetId_ItemsInstantiateWithAnIdAndGetterResturn_Int()
+    {
+      //Arrange
+      string description = "Camp stove";
+      Gear newGear = new Gear(description);
+
+      //Act
+      int result = newGear.Id;
+
+      //Assert
+      Assert.AreEqual(1, result);
+
+    }
   }
 }

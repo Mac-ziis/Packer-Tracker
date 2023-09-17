@@ -26,5 +26,19 @@ namespace PackerTracker.Controllers
       return RedirectToAction("Index");
     }
 
+    [HttpPost("/items/delete")]
+    public ActionResult DeleteAll()
+    {
+      Gear.ClearAll();
+      return View();
+    }
+
+    [HttpGet("/items/{id}")]
+    public ActionResult Show(int id)
+    {
+      Gear foundGear = Gear.Find(id);
+      return View(foundGear);
+    }
+
   }
 }
