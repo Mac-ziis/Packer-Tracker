@@ -14,7 +14,7 @@ namespace PackerTracker.Tests
     {
       string gearName = "Boots";
       Gear newGear = new Gear(gearName);
-      // Assert.AreEqual(typeof(Gear), newGear.GetType());
+      Assert.AreEqual(typeof(Gear), newGear.GetType());
     }
     
   }
