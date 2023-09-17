@@ -6,8 +6,12 @@ using System;
 namespace PackerTracker.Tests
 {
   [TestClass]
-  public class GearTests
+  public class GearTests : IDisposable
   {
+    public void Dispose()
+    {
+      Gear.ClearAll();
+    }
 
     [TestMethod]
     public void GearConstructor_CreatesInstanceOfGear_Gear()
@@ -52,6 +56,20 @@ namespace PackerTracker.Tests
     {
       // Arrange
       List<Gear> newList = new List<Gear> { };
+      // Act
+      List<Gear> result = Gear.GetAll();
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+    [TestMethod] //
+    public void GetAll_ReturnsGears_GearList()
+    {
+      //Arrange
+      string description01 = "Pack the sleeping pad.";
+      string description02 = "Get fuel for the camp stove.";
+      Gear newGear1 = new Gear(description01);
+      Gear newGear2 = new Gear(description02);
+      List<Gear> newList = new List<Gear> { newGear1, newGear2 };
       // Act
       List<Gear> result = Gear.GetAll();
       // Assert
