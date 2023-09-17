@@ -1,30 +1,28 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ToDoList
+namespace PackerTracker
 {
   class Program
   {
     static void Main(string[] args)
     {
-      //   WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+        WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-      //   builder.Services.AddControllersWithViews();
+        builder.Services.AddControllersWithViews();
 
-      //   WebApplication app = builder.Build();
+        WebApplication app = builder.Build();
 
-      // //   app.UseDeveloperExceptionPage();
-      //   app.UseHttpsRedirection();
+        app.UseHttpsRedirection();
 
-      //   app.UseRouting();
+        app.UseRouting();
 
-      //   app.MapControllerRoute(
-      //     name: "default",
-      //     pattern: "{controller=Home}/{action=Index}/{id?}"
-      //   );
+        app.MapControllerRoute(
+          name: "default",
+          pattern: "{controller=Home}/{action=Index}/{id?}"
+        );
 
-      //   app.Run();
-      // }
+        app.Run();
+      }
     }
   }
-}
