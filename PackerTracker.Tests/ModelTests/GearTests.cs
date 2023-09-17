@@ -46,6 +46,17 @@ namespace PackerTracker.Tests
       //Assert
       Assert.AreEqual(updatedDescription, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_GearList()
+    {
+      // Arrange
+      List<Gear> newList = new List<Gear> { };
+      // Act
+      List<Gear> result = Gear.GetAll();
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
     
   }
 }
