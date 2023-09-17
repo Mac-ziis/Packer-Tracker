@@ -30,6 +30,22 @@ namespace PackerTracker.Tests
       //Assert
       Assert.AreEqual(description, result);
     }
+
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      //Arrange
+      string description = "Running Shoes with white stripes.";
+      Gear newGear = new Gear(description);
+
+      //Act
+      string updatedDescription = "White striped running shoes.";
+      newGear.Description = updatedDescription;
+      string result = newGear.Description;
+
+      //Assert
+      Assert.AreEqual(updatedDescription, result);
+    }
     
   }
 }
